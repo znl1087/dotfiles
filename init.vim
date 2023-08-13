@@ -19,6 +19,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'psliwka/vim-smoothie'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 let mapleader = ","
@@ -76,7 +77,6 @@ nmap <leader>f  <Plug>(coc-format-selected)
 command! -nargs=0 Format :call CocActionAsync('format')
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
-set statusline^=%{get(g:,'coc_git_status','')}%{get(b:,'coc_git_status','')}%{get(b:,'coc_git_blame','')}
 "Toggle Menu and Toolbar
 set guioptions-=m
 set guioptions-=T
@@ -88,3 +88,25 @@ if has("win32")
     imap <C-v> <ESC>"+pa
 endif
 let g:coc_global_extensions = ['coc-rust-analyzer', 'coc-json', 'coc-git']
+" lightline
+let g:lightline = {
+  \ 'active': {
+  \   'left': [
+  \     [ 'mode', 'paste' ],
+  \     [ 'ctrlpmark', 'git', 'diagnostic', 'cocstatus', 'filename', 'method' ]
+  \   ],
+  \   'right':[
+  \     [ 'filetype', 'fileencoding', 'lineinfo', 'percent' ],
+  \     [ 'blame' ]
+  \   ],
+  \ },
+  \ 'component_function': {
+  \   'blame': 'LightlineGitBlame',
+  \ }
+\ }
+
+function! LightlineGitBlame() abort
+  let blame = get(b:, 'coc_git_blame', '')
+  " return blame
+  return winwidth(0) > 120 ? blame : ''
+endfunction
