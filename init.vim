@@ -1,0 +1,88 @@
+set nocompatible
+filetype off
+
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdtree'
+Plug 'github/copilot.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ErichDonGubler/vim-sublime-monokai'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+Plug 'voldikss/vim-floaterm'
+Plug 'psliwka/vim-smoothie'
+Plug 'jlanzarotta/bufexplorer'
+call plug#end()
+let mapleader = ","
+set noswapfile
+filetype plugin indent on    " required
+syntax on
+set guifont=Consolas:h12
+set showmode
+set showcmd
+set mouse=a
+set encoding=utf-8
+set t_Co=256
+set autoindent
+set ts=4
+set shiftwidth=4
+set softtabstop=2
+set expandtab
+set number
+set cursorline
+set wrap
+set showmatch
+set hlsearch
+set incsearch
+" set spell spelllang=en_us
+set history=1000
+set termguicolors
+colorscheme sublimemonokai
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
+
+" set gitgutter update interval
+set updatetime=100
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Formatting selected code
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+" Add `:Format` command to format current buffer
+command! -nargs=0 Format :call CocActionAsync('format')
+let g:session_autoload = 'no'
+let g:session_autosave = 'no'
+set statusline^=%{get(g:,'coc_git_status','')}%{get(b:,'coc_git_status','')}%{get(b:,'coc_git_blame','')}
+"Toggle Menu and Toolbar
+set guioptions-=m
+set guioptions-=T
+let autosave=5
+if has("win32")
+    vmap <C-c> "+yi
+    vmap <C-x> "+c
+    vmap <C-v> c<ESC>"+p
+    imap <C-v> <ESC>"+pa
+endif
