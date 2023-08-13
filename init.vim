@@ -54,6 +54,9 @@ inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
 " set gitgutter update interval
 set updatetime=100
 
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+
 " GoTo code navigation
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
