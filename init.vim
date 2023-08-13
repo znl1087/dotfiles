@@ -86,4 +86,4 @@ if has("win32")
     vmap <C-v> c<ESC>"+p
     imap <C-v> <ESC>"+pa
 endif
-let g:coc_global_extensions = ['coc-rust-analyzer', 'coc-json']
+let g:coc_global_extensions = ['coc-rust-analyzer', 'coc-json', 'coc-git']
