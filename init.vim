@@ -17,6 +17,7 @@ Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 Plug 'voldikss/vim-floaterm'
 Plug 'psliwka/vim-smoothie'
+Plug 'ryanoasis/vim-devicons'
 Plug 'jlanzarotta/bufexplorer'
 call plug#end()
 
@@ -24,7 +25,7 @@ let mapleader = ","
 set noswapfile
 filetype plugin indent on    " required
 syntax on
-set guifont=Consolas:h12
+set guifont=Consolas\ NF:h12
 set showmode
 set showcmd
 set mouse=a
