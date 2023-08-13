@@ -19,6 +19,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'psliwka/vim-smoothie'
 Plug 'jlanzarotta/bufexplorer'
 call plug#end()
+
 let mapleader = ","
 set noswapfile
 filetype plugin indent on    " required
@@ -40,7 +41,6 @@ set wrap
 set showmatch
 set hlsearch
 set incsearch
-" set spell spelllang=en_us
 set history=1000
 set termguicolors
 colorscheme sublimemonokai
@@ -86,3 +86,4 @@ if has("win32")
     vmap <C-v> c<ESC>"+p
     imap <C-v> <ESC>"+pa
 endif
+let g:coc_global_extensions = ['coc-rust-analyzer', 'coc-json']
