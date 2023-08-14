@@ -22,6 +22,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'itchyny/lightline.vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'chrisbra/csv.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 let mapleader = ","
@@ -80,6 +81,7 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 " Add `:Format` command to format current buffer
 command! -nargs=0 Format :call CocActionAsync('format')
+nmap <leader>fa <Plug>(coc-format)
 
 " Applying code actions to the selected code block
 " Example: `<leader>aap` for current paragraph
