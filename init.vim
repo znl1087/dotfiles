@@ -125,3 +125,4 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
   \ }
+so ~/dotfiles/own.vim
