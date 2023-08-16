@@ -126,3 +126,4 @@ let g:lightline = {
       \ },
   \ }
 so ~/dotfiles/own.vim
+so ~/dotfiles/tree.vim
