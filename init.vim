@@ -49,12 +49,21 @@ set incsearch
 set history=1000
 set termguicolors
 colorscheme sublimemonokai
+let g:copilot_node_command = "/Users/znl/.config/nvm/versions/node/v21.6.1/bin/node"
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
 inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
 
 " set gitgutter update interval
 set updatetime=100
+
+" Symbol renaming
+nmap <leader>sf :Files<CR>
+nmap <leader>sb :Buffer<CR>
+nmap <leader>sa :Rg<CR>
+nmap <leader>loc :NERDTreeFind<CR>
+nnoremap <silent> <Leader>t   :FloatermToggle<CR>
+tnoremap <silent> <Leader>t   <C-\><C-n>:FloatermToggle<CR>
 
 " Symbol renaming
 nmap <leader>rn <Plug>(coc-rename)
@@ -127,3 +136,4 @@ let g:lightline = {
   \ }
 so ~/dotfiles/own.vim
 so ~/dotfiles/tree.vim
+so ~/dotfiles/terminal_help.vim
