@@ -23,6 +23,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'chrisbra/csv.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 let mapleader = ","
