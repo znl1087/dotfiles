@@ -24,6 +24,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'chrisbra/csv.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
+Plug 'PhilRunninger/nerdtree-visual-selection'
 call plug#end()
 
 let mapleader = ","
