@@ -54,6 +54,7 @@ let g:copilot_node_command = "/Users/znl/.config/nvm/versions/node/v21.6.1/bin/n
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
 inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
+set guioptions=r
 
 " set gitgutter update interval
 set updatetime=100
