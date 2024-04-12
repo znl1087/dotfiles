@@ -50,7 +50,6 @@ set incsearch
 set history=1000
 set termguicolors
 colorscheme sublimemonokai
-let g:copilot_node_command = "/Users/znl/.config/nvm/versions/node/v21.6.1/bin/node"
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
 inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
