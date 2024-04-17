@@ -16,7 +16,6 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 Plug 'voldikss/vim-floaterm'
-Plug 'psliwka/vim-smoothie'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'itchyny/lightline.vim'
@@ -25,8 +24,12 @@ Plug 'chrisbra/csv.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'PhilRunninger/nerdtree-visual-selection'
+Plug 'wfxr/minimap.vim'
 call plug#end()
 
+let g:minimap_width = 10
+let g:minimap_auto_start = 1
+let g:minimap_auto_start_win_enter = 1
 let mapleader = ","
 set noswapfile
 filetype plugin indent on    " required
